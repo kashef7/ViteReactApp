@@ -1,64 +1,96 @@
-
-.LoginPageBody{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
-
-
-.loginBox{
-    width: 90%;
-    max-width: 532px;
-    height: 90%;
-    max-height: 359px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    background-color: #424769;
-    border-radius: 96px;
-}
-
-input{
-    width: 412px;
-    height: 54px;
-    background-color: #7077A1;
-    border: none;
-    color: #C0C3D9;
-    margin-bottom: 12px;
-    font-size: 20px;
-}
-
-.usernameInput{
-    margin-top: 70px;
-}
-.passwordInput{
-    margin-bottom: 40px;
-}
-
-.loginBox button{
-    border: none;
-    border-radius: 17px;
-    width: 179px;
-    height: 39px;
-    background-color: #F6B17A;
-    font-size: 20px;
-}
-
-.loginBox button:hover{
-    background-color: #7077A1;
-    color: #C0C3D9;
-    border: solid;
-    border-color: #C0C3D9;
-}
-
-.loginBox button:active{
-    width: 181px;
-    height: 41px;
-}
-
-input::placeholder{
-    color: #C0C3D9;
-}
+    .LoginPageBody {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Use min-height for better scroll behavior */
+        width: 100vw;
+        padding: 1rem; /* Add padding for smaller devices */
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+    
+    .loginBox {
+        width: 100%;
+        max-width: 532px;
+        padding: 1.5rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        background-color: #424769;
+        border-radius: 48px; /* Reduce radius for smaller screens */
+    }
+    
+    /* Input fields */
+    input {
+        width: 100%;
+        max-width: 412px;
+        height: 54px;
+        background-color: #7077A1;
+        border: none;
+        color: #C0C3D9;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+    
+    input::placeholder {
+        color: #C0C3D9;
+    }
+    
+    /* Margin adjustments */
+    .usernameInput {
+        margin-top: 2rem;
+    }
+    
+    .passwordInput {
+        margin-bottom: 2.5rem;
+    }
+    
+    /* Button styles */
+    .loginBox button {
+        border: none;
+        border-radius: 17px;
+        width: 179px;
+        height: 39px;
+        background-color: #F6B17A;
+        font-size: 1.1rem;
+        transition: all 0.2s ease;
+    }
+    
+    .loginBox button:hover {
+        background-color: #7077A1;
+        color: #C0C3D9;
+        border: solid 1px #C0C3D9;
+    }
+    
+    .loginBox button:active {
+        width: 181px;
+        height: 41px;
+    }
+    
+    /* 📱 Responsive tweaks */
+    @media (max-width: 600px) {
+        .loginBox {
+        border-radius: 24px;
+        gap: 1rem;
+        }
+    
+        input {
+        font-size: 1rem;
+        height: 48px;
+        }
+    
+        .loginBox button {
+        width: 150px;
+        height: 36px;
+        font-size: 1rem;
+        }
+    
+        .loginBox button:active {
+        width: 152px;
+        height: 38px;
+        }
+    }
