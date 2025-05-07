@@ -34,6 +34,8 @@
         font-size: 1.1rem;
         padding: 0 1rem;
         box-sizing: border-box;
+        appearance: none; /* Reset browser styles */
+        -webkit-appearance: none; /* Reset for Safari */
     }
     
     input::placeholder {
@@ -58,6 +60,8 @@
         background-color: #F6B17A;
         font-size: 1.1rem;
         transition: all 0.2s ease;
+        appearance: none; /* Reset browser styles */
+        -webkit-appearance: none; /* Reset for Safari */
     }
     
     .loginBox button:hover {
