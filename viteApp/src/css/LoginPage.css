@@ -2,7 +2,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: calc(100vh - env(safe-area-inset-bottom)); /* Use min-height for better scroll behavior */
+        min-height: 100vh;
+        height: auto;
         width: 100vw;
         padding: 1rem; /* Add padding for smaller devices */
         box-sizing: border-box;
@@ -58,6 +59,7 @@
         width: 179px;
         height: 39px;
         background-color: #F6B17A;
+        color: #2D3250;
         font-size: 1.1rem;
         transition: all 0.2s ease;
         appearance: none; /* Reset browser styles */
