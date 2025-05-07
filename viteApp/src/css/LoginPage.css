@@ -2,7 +2,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh; /* Use min-height for better scroll behavior */
+        min-height: calc(100vh - env(safe-area-inset-bottom)); /* Use min-height for better scroll behavior */
         width: 100vw;
         padding: 1rem; /* Add padding for smaller devices */
         box-sizing: border-box;
