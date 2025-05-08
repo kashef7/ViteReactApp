@@ -1,6 +1,47 @@
 .navBar{
     background-color: #424769;
+    position: relative;
     width: 100%;
     height: 60px;
     overflow: hidden;
+}
+
+.Profile{
+    position: absolute;
+    top: 1.25vh;
+    left: 1vw;
+    background: none;
+    border: none;
+}
+
+.Profile img{
+    width: 90%;
+    max-width: 40px;
+    height: 90%;
+    max-height: 40px;
+}
+
+.Profile img:active{
+    width: 95%;
+    height: 95%;
+}
+
+.Menu{
+    position: absolute;
+    top: 1.25vh;
+    right: 1vw;
+    background: none;
+    border: none;
+}
+
+.Menu img{
+    width: 90%;
+    max-width: 40px;
+    height: 90%;
+    max-height: 40px;
+}
+
+.Menu img:active{
+    width: 95%;
+    height: 95%;
 }
