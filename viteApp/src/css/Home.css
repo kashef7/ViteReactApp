@@ -1,15 +1,17 @@
+
+
 .HomePage {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 20vh;
-    height: auto;
+    min-height: 100vh;
+    height: 100vh;
 }
 
 .Shares {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    padding-top: 15px;
 }
 
 .ShareBox {
@@ -49,7 +51,7 @@
     width: 100%;
     padding: 5px;
     font-size: 1rem;
-    resize: none;
+    min-height: 40px; 
     overflow: hidden;
     box-sizing: border-box;
     line-height: 1.5;
@@ -73,7 +75,7 @@
     color: #2D3250;
     font-size: 1.1rem;
     transition: all 0.2s ease;
-    appearance: none; /* Reset browser styles */
+    appearance: none; 
     -webkit-appearance: none; 
 }
 
