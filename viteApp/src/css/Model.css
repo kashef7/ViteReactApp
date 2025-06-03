@@ -1,0 +1,55 @@
+.Main-model{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.351);
+    animation: fadeIn 0.3s ease;
+}
+
+.model-content{
+    background-color: #7077A1;
+    width: 32rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: scroll;
+    animation: slideIn 0.3s ease;
+}
+
+.model-content::-webkit-scrollbar{
+    display: none;
+}
+
+h1{
+    color: #cfd4f7;
+}
+
+@media (max-width: 600px){
+    .model-content{
+        width: 15rem;
+    }
+}
+
+@keyframes fadeIn{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn{
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {transform: translateY(0);
+        opacity: 1;
+    }
+}

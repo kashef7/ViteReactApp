@@ -17,8 +17,6 @@ export default function Home(){
         setShare(prev => [...prev,newShare])
         setShareText("")
     }
-
-
     return(
         <div className="HomePage">
             <div className="Shares">
@@ -39,10 +37,8 @@ export default function Home(){
                     return(
                         <Share txt = {share.Text} img = {share.Profile}></Share>
                     )
-                    
                 })}
             </div>
-
         </div>
     );
 }
