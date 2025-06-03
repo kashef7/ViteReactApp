@@ -86,3 +86,9 @@
 .ShareButton:active{
     max-width:7.5rem;
 }
+
+@media (max-width : 600){
+    .ShareBox{
+        width: 250px;
+    } 
+} 
