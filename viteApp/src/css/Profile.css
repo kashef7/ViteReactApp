@@ -1,0 +1,69 @@
+.Profile-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Changed from justify-items to align-items */
+    overflow-y: auto; /* Changed from scroll to auto for better behavior */
+    min-height: 100vh;
+    padding: 20px; /* Added padding for better spacing */
+}
+
+.Profile-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Added margin for spacing */
+}
+
+.Profile-pic{
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #7077A1; /* Added border for better appearance */
+    margin-bottom: 15px; /* Added margin */
+}
+
+.Profile-pic img {
+    width: 100%; /* Make image fill the container */
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the circle properly */
+}
+
+.Profile-details > p {
+    font-size: 1.5rem; /* Style the username */
+    font-weight: bold;
+    color: #7077A1;
+    margin: 10px 0;
+}
+
+.Profile-info{
+    display: flex;
+    flex-direction: row; /* Changed to row for horizontal layout */
+    gap: 20px; /* Added gap between items */
+    align-items: center; /* Changed from left to center */
+    background-color: #7077A1;
+    color: #EBEDFC;
+    padding: 15px 25px; /* Added padding */
+    border-radius: 10px; /* Added border radius */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Added subtle shadow */
+}
+
+.Profile-info p {
+    margin: 0; /* Remove default margin */
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .Profile-info {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .Profile-pic {
+        width: 8rem;
+        height: 8rem;
+    }
+}

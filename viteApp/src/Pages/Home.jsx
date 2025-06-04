@@ -2,6 +2,7 @@ import "../css/Home.css"
 import profileIcon from '../assets/profile-svgrepo-com.svg';
 import Share from "../components/Share";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 export default function Home(){
     const [shareText , setShareText] = useState("");
     const [shares , setShare] = useState([]);
@@ -22,7 +23,9 @@ export default function Home(){
             <div className="Shares">
                 <div className="ShareBox">
                     <button className="ShareProfile">
-                        <img src={profileIcon}></img>
+                        <Link to={"/profile"}>
+                            <img src={profileIcon}></img>
+                        </Link>
                     </button>
                     <textarea
                         placeholder="Share Your Thoughts"

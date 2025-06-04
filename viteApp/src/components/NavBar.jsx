@@ -1,6 +1,7 @@
 import "../css/NavBar.css"
 import profileIcon from '../assets/profile-svgrepo-com.svg';
 import menuIcon from '../assets/menu-svgrepo-com.svg';
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import Menu from "./Menu";
 export default function NavBar(){
@@ -11,7 +12,9 @@ export default function NavBar(){
     return(
         <div className="navBar">
             <button className="Profile">
-                <img src={profileIcon}></img>
+                <Link to={"/profile"}>
+                    <img src={profileIcon}></img>
+                </Link>
             </button>
             <button onClick={onMenuClick} className="Menu">
                 <img src={menuIcon}></img>
