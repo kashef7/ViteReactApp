@@ -16,10 +16,15 @@ export default function NavBar(){
                     <img src={profileIcon}></img>
                 </Link>
             </button>
+            <div className="navBar-title">
+                <Link to="/" style={{ textDecoration: 'none', color: '#fff' }}>
+                    <span style={{ fontFamily: 'cursive', fontSize: '2rem', fontWeight: 'bold', letterSpacing: '2px' }}>SHARES</span>
+                </Link>
+            </div>
             <button onClick={onMenuClick} className="Menu">
                 <img src={menuIcon}></img>
             </button>
-                {showMenu && <Menu className="Menu-box"/>}
+            {showMenu && <Menu onClose={() => setShowMenu(false)} className="Menu-box"/>}
         </div> 
     )
 }

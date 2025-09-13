@@ -1,22 +1,42 @@
 import "../css/Home.css"
 import profileIcon from '../assets/profile-svgrepo-com.svg';
 import Share from "../components/Share";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-export default function Home(){
+import { useUser } from '../components/UserContext.jsx';
+export default function Home({ loggedInUserId }){
     const [shareText , setShareText] = useState("");
     const [shares , setShare] = useState([]);
+    const { user } = useUser();
+    const fetchItems = async() =>{
+    fetch("https://sharesappbackend-production.up.railway.app/api/v1/posts/",{
+          method: 'GET',
+          credentials: 'include'
+        })
+        .then(res => res.json())
+        .then(data => {
+          setShare(data.data.data);
+        })
+        .catch((err) =>{
+            console.log(err.message);
+        })
+    }
 
-    const handelShareSubmit = () =>{
+    useEffect(()=>{
+        fetchItems();
+    },[])
+    const handelShareSubmit = async () =>{
         if(shareText.trim() === ""){
             return 
         }
-        const newShare = {
-            Text : shareText,
-            Profile : profileIcon,
-        }
-        setShare(prev => [...prev,newShare])
-        setShareText("")
+    await fetch("https://sharesappbackend-production.up.railway.app/api/v1/posts",{
+            method:"POST",
+            headers: {'Content-Type': "application/json"},
+            credentials: "include",
+            body : JSON.stringify({content: shareText})
+        }).then(res => res.json())
+        await fetchItems();
+        setShareText("");
     }
     return(
         <div className="HomePage">
@@ -38,7 +58,16 @@ export default function Home(){
                 </div>
                 {shares.map(share =>{
                     return(
-                        <Share txt = {share.Text} img = {share.Profile}></Share>
+                        <Share
+                            key={share._id}
+                            id={share._id}
+                            txt={share.content}
+                            userName={share.user.name}
+                            img={share.user.profilePic || profileIcon}
+                            userId={typeof share.user === 'object' ? share.user._id : share.user}
+                            loggedInUserId={loggedInUserId}
+                            onDelete={fetchItems}
+                        />
                     )
                 })}
             </div>
